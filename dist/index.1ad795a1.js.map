@@ -1,0 +1,1 @@
+{"mappings":"AAAQA,SAASC,cAAc","sources":["src/app.js"],"sourcesContent":["let a = document.querySelector('.dsd')"],"names":["document","querySelector"],"version":3,"file":"index.1ad795a1.js.map"}
