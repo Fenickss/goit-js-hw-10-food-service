@@ -3,6 +3,10 @@ import menuFood from '../menu.json';
 
 
 const menuContainer = document.querySelector('.js-menu');
+const menuMarkup = cardTemplate(menuFood);
+menuContainer.insertAdjacentHTML('beforeend', menuMarkup); 
+
+
 // const cardMarkup = createMenuCardsMarkup(menuFood);
 
 
@@ -15,6 +19,4 @@ const menuContainer = document.querySelector('.js-menu');
 
 
 
-const menu = document.querySelector('ul.js-menu');
-const menuMarkup = cardTemplate(menuFood);
-menu.insertAdjacentHTML('beforeend', menuMarkup); 
+

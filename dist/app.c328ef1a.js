@@ -2352,15 +2352,13 @@ var _menu = _interopRequireDefault(require("../menu.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const menuContainer = document.querySelector('.js-menu'); // const cardMarkup = createMenuCardsMarkup(menuFood);
+const menuContainer = document.querySelector('.js-menu');
+const menuMarkup = (0, _cardTemplate.default)(_menu.default);
+menuContainer.insertAdjacentHTML('beforeend', menuMarkup); // const cardMarkup = createMenuCardsMarkup(menuFood);
 // cardTemplate.insertAdjacentHTML('beforeend', cardMarkup);
 // function createMenuCardsMarkup(menuFood) {
 //      menuFood.map(cardTemplate).join('');
 // }
-
-const menu = document.querySelector('ul.js-menu');
-const menuMarkup = (0, _cardTemplate.default)(_menu.default);
-menu.insertAdjacentHTML('beforeend', menuMarkup);
 },{"./template/card-template":"template/card-template.hbs","../menu.json":"../menu.json"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
