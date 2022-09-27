@@ -2357,6 +2357,8 @@ const cardMarkup = createMenuCardsMarkup(_menu.default);
 
 _cardTemplate.default.insertAdjacentHTML('beforeend', cardMarkup);
 
+_cardTemplate.default.addEventListener('click', onMenuContainerClick);
+
 function createMenuCardsMarkup(menuFood) {
   menuFood.map(_cardTemplate.default).join('');
 }
