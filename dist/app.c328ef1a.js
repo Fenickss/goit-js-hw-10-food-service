@@ -2166,11 +2166,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 18
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 27
         }
       }
@@ -2180,11 +2180,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 6,
           "column": 17
         },
         "end": {
-          "line": 5,
+          "line": 6,
           "column": 25
         }
       }
@@ -2194,11 +2194,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 35
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 43
         }
       }
@@ -2208,11 +2208,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 16
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 25
         }
       }
@@ -2222,11 +2222,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 15,
           "column": 16
         },
         "end": {
-          "line": 14,
+          "line": 15,
           "column": 31
         }
       }
@@ -2238,11 +2238,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 18,
+          "line": 19,
           "column": 16
         },
         "end": {
-          "line": 20,
+          "line": 21,
           "column": 25
         }
       }
@@ -2262,7 +2262,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
+    return "\r\n" + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
       "name": "each",
       "hash": {},
       "fn": container.program(1, data, 0),
@@ -2270,15 +2270,15 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 0
         },
         "end": {
-          "line": 30,
+          "line": 31,
           "column": 10
         }
       }
-    })) != null ? stack1 : "";
+    })) != null ? stack1 : "");
   },
   "useData": true
 });
@@ -2352,16 +2352,15 @@ var _menu = _interopRequireDefault(require("../menu.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const menuContainer = document.querySelector('.js-menu');
-const cardMarkup = createMenuCardsMarkup(_menu.default);
+const menuContainer = document.querySelector('.js-menu'); // const cardMarkup = createMenuCardsMarkup(menuFood);
+// cardTemplate.insertAdjacentHTML('beforeend', cardMarkup);
+// function createMenuCardsMarkup(menuFood) {
+//      menuFood.map(cardTemplate).join('');
+// }
 
-_cardTemplate.default.insertAdjacentHTML('beforeend', cardMarkup);
-
-_cardTemplate.default.addEventListener('click', onMenuContainerClick);
-
-function createMenuCardsMarkup(menuFood) {
-  menuFood.map(_cardTemplate.default).join('');
-}
+const menu = document.querySelector('ul.js-menu');
+const menuMarkup = (0, _cardTemplate.default)(_menu.default);
+menu.insertAdjacentHTML('beforeend', menuMarkup);
 },{"./template/card-template":"template/card-template.hbs","../menu.json":"../menu.json"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
