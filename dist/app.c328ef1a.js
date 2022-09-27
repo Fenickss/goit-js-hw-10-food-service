@@ -2166,11 +2166,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 4,
           "column": 18
         },
         "end": {
-          "line": 5,
+          "line": 4,
           "column": 27
         }
       }
@@ -2180,11 +2180,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 5,
           "column": 17
         },
         "end": {
-          "line": 6,
+          "line": 5,
           "column": 25
         }
       }
@@ -2194,11 +2194,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 7,
           "column": 35
         },
         "end": {
-          "line": 8,
+          "line": 7,
           "column": 43
         }
       }
@@ -2208,11 +2208,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 10,
           "column": 16
         },
         "end": {
-          "line": 11,
+          "line": 10,
           "column": 25
         }
       }
@@ -2222,11 +2222,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 14,
           "column": 16
         },
         "end": {
-          "line": 15,
+          "line": 14,
           "column": 31
         }
       }
@@ -2238,11 +2238,11 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 19,
+          "line": 18,
           "column": 16
         },
         "end": {
-          "line": 21,
+          "line": 20,
           "column": 25
         }
       }
@@ -2262,7 +2262,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "\r\n" + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
+    return (stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, depth0, {
       "name": "each",
       "hash": {},
       "fn": container.program(1, data, 0),
@@ -2270,15 +2270,15 @@ const templateFunction = _handlebars.default.template({
       "data": data,
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 0
         },
         "end": {
-          "line": 31,
+          "line": 30,
           "column": 10
         }
       }
-    })) != null ? stack1 : "");
+    })) != null ? stack1 : "";
   },
   "useData": true
 });
@@ -2354,11 +2354,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const menuContainer = document.querySelector('.js-menu');
 const menuMarkup = (0, _cardTemplate.default)(_menu.default);
-menuContainer.insertAdjacentHTML('beforeend', menuMarkup); // const cardMarkup = createMenuCardsMarkup(menuFood);
-// cardTemplate.insertAdjacentHTML('beforeend', cardMarkup);
-// function createMenuCardsMarkup(menuFood) {
-//      menuFood.map(cardTemplate).join('');
-// }
+menuContainer.insertAdjacentHTML('beforeend', menuMarkup);
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme'
+};
+const THEME_KEY = 'theme';
+const themeSwitcher = document.querySelector('.theme-switch__toggle');
+themeSwitcher.addEventListener('change', switchTheme);
+makeSavedTheme();
+
+function switchTheme(e) {
+  e.target.checked ? replaceTheme(Theme.LIGHT, Theme.DARK) : replaceTheme(Theme.DARK, Theme.LIGHT);
+}
+
+function replaceTheme(oldTheme, newTheme) {
+  document.body.classList.add(newTheme);
+  document.body.classList.remove(oldTheme);
+  localStorage.setItem(THEME_KEY, newTheme);
+}
+
+function makeSavedTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+
+  if (savedTheme === Theme.DARK) {
+    themeSwitcher.checked = true;
+    replaceTheme(Theme.LIGHT, Theme.DARK);
+  } else {
+    replaceTheme(Theme.DARK, Theme.LIGHT);
+  }
+}
 },{"./template/card-template":"template/card-template.hbs","../menu.json":"../menu.json"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
